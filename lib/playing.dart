@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
-// import 'package:get/state_manager.dart';
 import 'package:musicapp/controllers/music.dart';
 
 class playing extends StatefulWidget {
@@ -22,17 +21,9 @@ class _playingState extends State<playing> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
-  // Stream<PositionData> get _positionDataStream =>
-  //     CombineLatestStream<Duration, Duration, Duration?, PositionData>(
-  //         musicCon.player.positionStream,
-  //         musicCon.player.bufferedPositionStream,
-  //         musicCon.player.durationStream,
-  //         (position, bufferedPosition, duration) => PositionData(
-  //             position, bufferedPosition, duration ?? Duration.zero));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,13 +122,6 @@ class _playingState extends State<playing> {
                                           color: Colors.red,
                                         ),
                                 );
-
-                                //Text('${positionSnapshot.data}');
-                                // ProgressBar(
-                                //   progress: positionSnapshot.data ?? Duration.zero,
-                                //   total: buf.data ?? Duration.zero,
-                                //   //  onSeek: player.seek,
-                                // );
                               },
                             );
                           },
@@ -233,12 +217,4 @@ class _playingState extends State<playing> {
               ),
             )));
   }
-}
-
-class PositionData {
-  const PositionData(this.position, this.bufferedPosition, this.duration);
-
-  final Duration position;
-  final Duration bufferedPosition;
-  final Duration duration;
 }

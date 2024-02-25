@@ -13,7 +13,6 @@ class MusicController extends GetxController {
 
   @override
   void onInit() async {
-    // add();
     await getData();
     super.onInit();
   }
